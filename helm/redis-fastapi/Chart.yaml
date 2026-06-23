@@ -1,0 +1,6 @@
+apiVersion: v2
+name: redis-fastapi
+description: A FastAPI application using Redis, deployed with Kubernetes and Helm
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

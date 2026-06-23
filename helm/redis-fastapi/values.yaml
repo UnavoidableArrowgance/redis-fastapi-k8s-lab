@@ -1,0 +1,44 @@
+fastapi:
+  replicaCount: 2
+
+  image:
+    repository: python-api
+    tag: latest
+    pullPolicy: Never
+
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 8000
+
+redis:
+  replicaCount: 1
+
+  image:
+    repository: redis
+    tag: "7"
+
+  service:
+    port: 6379
+    targetPort: 6379
+
+  config:
+    host: redis
+    port: "6379"
+
+  secret:
+    password: redis-123
+
+  persistence:
+    enabled: true
+    storageClassName: standard
+    accessMode: ReadWriteOnce
+    size: 1Gi
+
+ingress:
+  enabled: true
+  className: nginx
+  host: localhost
+  path: /api(.*)
+  pathType: ImplementationSpecific
+  rewriteTarget: $1

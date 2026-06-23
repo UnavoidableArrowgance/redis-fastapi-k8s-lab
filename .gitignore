@@ -1,0 +1,5 @@
+.venv/
+_psycache_/
+*.pyc
+.env
+argocd-password.txt
