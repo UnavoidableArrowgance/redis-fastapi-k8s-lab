@@ -35,10 +35,11 @@ redis:
     accessMode: ReadWriteOnce
     size: 1Gi
 
+
 ingress:
   enabled: true
   className: nginx
   host: localhost
-  path: /api(.*)
+  path: /api/?(.*)
   pathType: ImplementationSpecific
-  rewriteTarget: $1
+  rewriteTarget: /$1

@@ -4,6 +4,7 @@ kind: Ingress
 metadata:
   name: fastapi-ingress
   annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: {{ .Values.ingress.rewriteTarget | quote }}
 spec:
   ingressClassName: {{ .Values.ingress.className }}
