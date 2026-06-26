@@ -47,5 +47,5 @@ ingress:
 
 canary:
   enabled: true
-  v1Weight: 90
-  v2Weight: 10
+  v1Weight: 50
+  v2Weight: 50
