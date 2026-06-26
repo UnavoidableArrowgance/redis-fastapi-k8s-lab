@@ -43,3 +43,9 @@ ingress:
   path: /api/?(.*)
   pathType: ImplementationSpecific
   rewriteTarget: /$1
+
+
+canary:
+  enabled: true
+  v1Weight: 90
+  v2Weight: 10

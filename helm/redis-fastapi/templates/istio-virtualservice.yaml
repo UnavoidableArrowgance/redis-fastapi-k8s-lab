@@ -20,3 +20,9 @@ spec:
             host: python-api
             port:
               number: 80
+          weight: {{ .Values.canary.v1Weight }}
+        - destination:
+            host: python-api-v2
+            port:
+              number: 80
+          weight: {{ .Values.canary.v2Weight }}
